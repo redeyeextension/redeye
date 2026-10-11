@@ -1,0 +1,21 @@
+body{width:340px; padding:14px 18px 16px}
+header{display:flex; align-items:center; justify-content:space-between}
+h1{font-size:1.5rem; font-weight:700; letter-spacing:0}
+button.icon{border:0; padding:6px; border-radius:8px; color:var(--muted)}
+button.icon:hover{background:var(--soft)}
+#eyeSvg{display:block; width:200px; height:auto; margin:6px auto 0}
+.status{text-align:center; margin:6px 0 0; font-weight:600; font-size:1.05rem; min-height:1.7em}
+.status.warn{color:var(--red)}
+.why{text-align:center; margin:0; color:var(--muted); font-size:.85rem; min-height:1.3em}
+.timer{text-align:center; margin-top:8px}
+.clock{direction:ltr; font-variant-numeric:tabular-nums; font-size:3rem; line-height:1.1; font-weight:500}
+.label{color:var(--muted); font-size:.85rem}
+.bar{height:4px; background:var(--line); border-radius:2px; overflow:hidden; margin:10px 8px 0}
+.bar i{display:block; height:100%; width:0; background:var(--red)}
+.actions{display:flex; gap:10px; justify-content:center; margin-top:14px}
+.stats{display:grid; grid-template-columns:repeat(3,1fr); gap:8px; margin:16px 0 0; padding-top:12px; border-top:1px solid var(--line); text-align:center}
+.stats dt{color:var(--muted); font-size:.75rem}
+.stats dd{margin:0; font-weight:600; font-size:1.2rem; font-variant-numeric:tabular-nums}
+.cam{margin:12px 0 0; color:var(--muted); font-size:.82rem; text-align:center; min-height:1.3em}
+.cam.err{color:var(--red)}
+button.link{display:block; margin:8px auto 0; border:0; text-decoration:underline; color:var(--teal); padding:2px 6px}

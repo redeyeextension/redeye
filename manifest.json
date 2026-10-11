@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "العين الحمرا — Red Eye",
+  "short_name": "Red Eye",
+  "version": "1.0.0",
+  "description": "Rest your eyes every 20 minutes. The camera tracks your blinking on-device and warns you when your eyes look tired.",
+  "minimum_chrome_version": "116",
+  "permissions": ["offscreen", "alarms", "storage", "notifications", "idle", "scripting"],
+  "host_permissions": ["<all_urls>"],
+  "background": { "service_worker": "src/background.js", "type": "module" },
+  "action": {
+    "default_title": "العين الحمرا",
+    "default_popup": "src/popup.html",
+    "default_icon": { "16": "icons/icon16.png", "32": "icons/icon32.png", "48": "icons/icon48.png", "128": "icons/icon128.png" }
+  },
+  "options_ui": { "page": "src/options.html", "open_in_tab": true },
+  "content_scripts": [
+    { "matches": ["<all_urls>"], "js": ["src/overlay.js"], "run_at": "document_idle" }
+  ],
+  "icons": { "16": "icons/icon16.png", "32": "icons/icon32.png", "48": "icons/icon48.png", "128": "icons/icon128.png" },
+  "content_security_policy": {
+    "extension_pages": "script-src 'self' 'wasm-unsafe-eval'; object-src 'self'"
+  }
+}

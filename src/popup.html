@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>العين الحمرا</title>
+<link rel="stylesheet" href="ui.css">
+<link rel="stylesheet" href="popup.css">
+</head>
+<body>
+<header>
+  <h1>العين الحمرا</h1>
+  <button class="icon" id="gear" aria-label="الإعدادات" title="الإعدادات">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg>
+  </button>
+</header>
+
+<svg id="eyeSvg" viewBox="0 0 400 240" role="img" aria-label="عينك على الشاشة">
+  <defs>
+    <clipPath id="eyeClip"><path d="M12 120 C90 28 310 28 388 120 C310 212 90 212 12 120Z"/></clipPath>
+    <radialGradient id="irisGrad" cx=".5" cy=".5" r=".5">
+      <stop offset="0" stop-color="#0F3B42"/><stop offset=".55" stop-color="#2E7D83"/><stop offset="1" stop-color="#1A4D55"/>
+    </radialGradient>
+    <linearGradient id="shade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#10303A" stop-opacity=".30"/><stop offset=".45" stop-color="#10303A" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <g id="eye" style="transform-origin:200px 120px">
+    <g clip-path="url(#eyeClip)">
+      <rect width="400" height="240" fill="var(--sclera)"/>
+      <rect id="wash" width="400" height="240" fill="#D9344A" opacity="0"/>
+      <g id="veinsA" fill="none" stroke="#C7283B" stroke-width="2.2" stroke-linecap="round" opacity="0">
+        <path d="M16 121 C52 119 86 113 128 110"/><path d="M384 119 C348 121 314 113 272 110"/>
+        <path d="M124 50 C138 76 146 94 150 108"/><path d="M276 190 C262 164 254 146 250 132"/>
+      </g>
+      <g id="veinsB" fill="none" stroke="#C7283B" stroke-width="1.8" stroke-linecap="round" opacity="0">
+        <path d="M22 126 C60 132 96 134 134 128"/><path d="M378 114 C340 108 306 106 268 114"/>
+        <path d="M60 80 C86 84 108 94 132 104"/><path d="M340 160 C316 156 292 146 268 138"/>
+        <path d="M276 50 C262 76 254 94 250 108"/><path d="M126 190 C140 164 148 146 152 132"/>
+        <path d="M92 98 C104 96 116 98 128 104"/><path d="M300 142 C288 144 276 142 266 138"/>
+      </g>
+      <g transform="translate(200 120)"><g id="irisG">
+        <circle r="66" fill="url(#irisGrad)"/><circle r="26" fill="#0A1417"/>
+        <circle cx="-16" cy="-18" r="9" fill="#fff" opacity=".85"/>
+      </g></g>
+      <rect width="400" height="240" fill="url(#shade)"/>
+    </g>
+    <path d="M12 120 C90 28 310 28 388 120 C310 212 90 212 12 120Z" fill="none" stroke="var(--ink)" stroke-width="5" stroke-linejoin="round"/>
+    <path d="M64 76 C132 14 268 14 336 76" fill="none" stroke="var(--ink)" stroke-width="3" stroke-linecap="round" opacity=".45"/>
+  </g>
+</svg>
+
+<p class="status" id="status" aria-live="polite">جاهز</p>
+<p class="why" id="why"></p>
+
+<div class="timer">
+  <div class="clock" id="clock">20:00</div>
+  <div class="label" id="clockLabel">الباقي على الراحة</div>
+  <div class="bar"><i id="barFill"></i></div>
+</div>
+
+<div class="actions">
+  <button class="primary" id="startBtn">ابدأ الجلسة</button>
+  <button id="restBtn" hidden>ريّح دلوقتي</button>
+</div>
+
+<dl class="stats">
+  <div><dt>معدل الرمش</dt><dd id="bpm">—</dd></div>
+  <div><dt>راحات النهارده</dt><dd id="sessions">0</dd></div>
+  <div><dt>تنبيهات تعب</dt><dd id="alerts">0</dd></div>
+</dl>
+
+<p class="cam" id="camLine"></p>
+<button class="link" id="fixBtn" hidden></button>
+
+<script type="module" src="popup.js"></script>
+</body>
+</html>

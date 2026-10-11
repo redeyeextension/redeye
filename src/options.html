@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>العين الحمرا — الإعدادات</title>
+<link rel="stylesheet" href="ui.css">
+<link rel="stylesheet" href="options.css">
+</head>
+<body>
+<main>
+  <h1>العين الحمرا</h1>
+  <p class="sub">كل 20 دقيقة قدام الشاشة، 20 ثانية بص فيها بعيد. والكاميرا بتراقب رمشك علشان تنبّهك لو عينك تعبت.</p>
+
+  <section>
+    <h2>1. جرّب الكاميرا</h2>
+    <p class="hint">أول مرة المتصفح هيطلب إذن الكاميرا. الصورة بتتحلل على جهازك بس ومبتتبعتش لأي مكان.</p>
+    <div class="test">
+      <div class="preview"><video id="video" muted playsinline></video><span id="flash" aria-hidden="true"></span></div>
+      <div class="read">
+        <div class="row"><span>الحالة</span><b id="tState">واقفة</b></div>
+        <div class="row"><span>فتحة العين</span><div class="meter"><i id="tOpen"></i></div></div>
+        <div class="row"><span>رمشات</span><b id="tBlinks">0</b></div>
+        <div class="row"><span>معدل الرمش</span><b id="tBpm">—</b></div>
+        <div class="row"><span>مؤشر التعب</span><b id="tFat">—</b></div>
+        <div class="btns">
+          <button class="primary" id="testBtn">شغّل الاختبار</button>
+          <button id="calBtn" disabled>معايرة من الأول</button>
+        </div>
+      </div>
+    </div>
+    <p class="msg" id="testMsg"></p>
+  </section>
+
+  <section>
+    <h2>2. الإعدادات</h2>
+    <form id="form">
+      <label class="f"><span>مدة الشغل (دقيقة)</span><input type="number" id="workMin" min="5" max="60" step="1"></label>
+      <label class="f"><span>مدة الراحة (ثانية)</span><input type="number" id="restSec" min="10" max="60" step="1"></label>
+      <label class="f check"><input type="checkbox" id="useCamera"><span>استخدم الكاميرا لقياس الرمش والتعب</span></label>
+      <label class="f check"><input type="checkbox" id="hiRes"><span>دقة عالية (1280×720): أدق في الرمش، وأتقل شوية على الجهاز</span></label>
+      <label class="f"><span>سرعة الكاميرا</span>
+        <select id="fps"><option value="30">30 إطار/ث (متوازن)</option><option value="60">60 إطار/ث (أدق للرمشات السريعة)</option></select></label>
+      <label class="f"><span>حساسية تنبيه التعب</span>
+        <select id="sensitivity"><option value="high">عالية (ينبّه بدري)</option><option value="normal">عادية</option><option value="low">قليلة (ينبّه لما يبقى واضح)</option></select></label>
+      <label class="f"><span>لما عينك تتعب</span>
+        <select id="onFatigue"><option value="notify">نبّهني واسألني</option><option value="auto">ابدأ الراحة على طول</option></select></label>
+      <label class="f check"><input type="checkbox" id="autoBreak"><span>لو بعدت عن الشاشة طول فترة الراحة، احسبها راحة وابدأ العدّ من الأول</span></label>
+      <p class="msg" id="saved" aria-live="polite"></p>
+    </form>
+  </section>
+
+  <p class="note">القياس بيعتمد على سلوك الرمش (المعدل، طول الرمشة، الرمش الناقص، تدلّي الجفن). ده مؤشر مساعد وليس تشخيص طبي، ولو عندك ألم أو احمرار مستمر كلّم دكتور عيون.</p>
+</main>
+<script type="module" src="options.js"></script>
+</body>
+</html>

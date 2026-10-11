@@ -1,0 +1,25 @@
+main{max-width:720px; margin:0 auto; padding:32px 20px 56px}
+h1{font-size:2.4rem; font-weight:700; line-height:1.15}
+h2{font-size:1.15rem; margin:0 0 6px}
+.sub{color:var(--muted); margin:6px 0 0}
+section{margin-top:32px; padding-top:22px; border-top:1px solid var(--line)}
+.hint{color:var(--muted); font-size:.9rem; margin:0 0 14px}
+.test{display:grid; grid-template-columns:260px 1fr; gap:22px; align-items:start}
+.preview{position:relative; width:260px; aspect-ratio:4/3; background:var(--soft); border-radius:10px; overflow:hidden}
+.preview video{width:100%; height:100%; object-fit:cover; transform:scaleX(-1); display:block}
+#flash{position:absolute; top:10px; inset-inline-start:10px; width:14px; height:14px; border-radius:50%; background:var(--red); opacity:0; transition:opacity .25s}
+#flash.on{opacity:1; transition:none}
+.read .row{display:flex; justify-content:space-between; align-items:center; gap:12px; padding:5px 0; border-bottom:1px solid var(--line)}
+.read .row span{color:var(--muted); font-size:.9rem}
+.read b{font-variant-numeric:tabular-nums}
+.meter{flex:1; max-width:140px; height:8px; background:var(--soft); border-radius:4px; overflow:hidden; direction:ltr}
+.meter i{display:block; height:100%; width:0; background:var(--teal)}
+.btns{display:flex; gap:10px; margin-top:14px; flex-wrap:wrap}
+.msg{margin:10px 0 0; min-height:1.4em; font-size:.9rem; color:var(--muted)}
+.msg.err{color:var(--red)}
+.f{display:flex; align-items:center; justify-content:space-between; gap:16px; padding:10px 0; border-bottom:1px solid var(--line)}
+.f.check{justify-content:flex-start}
+.f input[type=number], .f select{font:inherit; padding:7px 10px; border-radius:8px; border:1.5px solid var(--line); background:var(--bg); color:var(--ink); min-width:150px}
+.f input[type=checkbox]{width:18px; height:18px; accent-color:var(--teal); flex:none}
+.note{margin:36px 0 0; padding-top:18px; border-top:1px solid var(--line); color:var(--muted); font-size:.88rem; max-width:62ch}
+@media (max-width:620px){ .test{grid-template-columns:1fr} .preview{width:100%} }

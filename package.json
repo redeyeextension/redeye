@@ -1,0 +1,15 @@
+{
+  "name": "red-eye",
+  "version": "1.0.0",
+  "description": "العين الحمرا — Chrome extension: 20-20-20 eye-rest timer with on-device blink and eye-fatigue detection.",
+  "private": true,
+  "type": "module",
+  "license": "MIT",
+  "scripts": {
+    "setup": "node scripts/setup.mjs",
+    "test": "node --test test/*.test.mjs"
+  },
+  "dependencies": {
+    "@mediapipe/tasks-vision": "1.1.0"
+  }
+}

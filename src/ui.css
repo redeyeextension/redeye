@@ -1,0 +1,25 @@
+/* Shared tokens for popup / options / rest pages */
+:root{
+  --bg:#E8EDF0; --ink:#10303A; --muted:#4F6A76; --line:#C3CFD6; --soft:#DAE4E8;
+  --red:#C7283B; --redtint:#F1C9CE; --teal:#2E7D83; --sclera:#F8F6F3; --ok:#2E7D5B;
+  color-scheme: light dark;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#0E1C22; --ink:#E6EEF1; --muted:#93AAB4; --line:#264651; --soft:#16303A;
+    --red:#E0495B; --redtint:#4A222A; --teal:#4FA3A9; --sclera:#EDEAE6; --ok:#58B88F;
+  }
+}
+*,*::before,*::after{box-sizing:border-box}
+body{
+  margin:0; background:var(--bg); color:var(--ink);
+  font-family:"IBM Plex Sans Arabic","Segoe UI",Tahoma,Arial,sans-serif; font-size:15px; line-height:1.65;
+}
+h1,h2{margin:0}
+button{
+  font:inherit; cursor:pointer; border-radius:10px; padding:9px 18px; font-weight:600;
+  border:1.5px solid var(--ink); background:transparent; color:var(--ink);
+}
+button.primary{background:var(--ink); color:var(--bg)}
+button:focus-visible, input:focus-visible, select:focus-visible{outline:3px solid var(--teal); outline-offset:2px}
+button[disabled]{opacity:.5; cursor:default}
